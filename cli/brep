@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+
+from brep import Search
+from sys import argv
+
+if len(argv) != 3:
+    print("Provide 1 prefix search term and 1 filepath only")
+    print("Example: `brep needle haystack.gz`")
+    exit(0)
+
+_, prefix, filepath = argv
+
+for result in Search(prefix, filepath):
+    print(result)
